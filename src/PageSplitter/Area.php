@@ -85,7 +85,7 @@ class Area
     /**
      * @param int $requestedPage
      */
-    public function setRequestedPage(int $requestedPage)
+    public function setRequestedPage($requestedPage)
     {
         $this->requestedPage = $requestedPage;
     }

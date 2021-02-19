@@ -1,3 +1,6 @@
+1.0.2
+- Fix error for backwards compatibility with older PHP versions.
+
 1.0.1
 - Make sure the block output cache is disabled.
 
