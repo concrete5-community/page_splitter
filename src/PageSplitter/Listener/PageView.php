@@ -5,9 +5,9 @@ namespace A3020\PageSplitter\Listener;
 use A3020\PageSplitter\AreaService;
 use Concrete\Core\Application\ApplicationAwareInterface;
 use Concrete\Core\Application\ApplicationAwareTrait;
-use Concrete\Core\Logging\Logger;
 use Concrete\Core\Page\Event;
 use Exception;
+use Psr\Log\LoggerInterface;
 
 class PageView implements ApplicationAwareInterface
 {
@@ -19,11 +19,11 @@ class PageView implements ApplicationAwareInterface
     private $areaService;
 
     /**
-     * @var Logger
+     * @var \Psr\Log\LoggerInterface
      */
     private $logger;
 
-    public function __construct(AreaService $areaService, Logger $logger)
+    public function __construct(AreaService $areaService, LoggerInterface $logger)
     {
         $this->areaService = $areaService;
         $this->logger = $logger;
@@ -46,7 +46,7 @@ class PageView implements ApplicationAwareInterface
                 );
             }
         } catch (Exception $e) {
-            $this->logger->addDebug($e->getMessage());
+            $this->logger->debug($e->getMessage());
         }
     }
 }
