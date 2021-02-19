@@ -11,8 +11,8 @@ class Controller extends BlockController
 {
     protected $btDefaultSet = 'basic';
     protected $btCacheBlockRecord = true;
-    protected $btCacheBlockOutput = true;
-    protected $btCacheBlockOutputOnPost = true;
+    protected $btCacheBlockOutput = false;
+    protected $btCacheBlockOutputOnPost = false;
     protected $btCacheBlockOutputForRegisteredUsers = false;
 
     public function getBlockTypeName()
@@ -22,7 +22,7 @@ class Controller extends BlockController
 
     public function getBlockTypeDescription()
     {
-        return t('Split the content in multiple pages.');
+        return t('Split content in multiple pages.');
     }
 
     public function view()
