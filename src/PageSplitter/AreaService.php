@@ -54,11 +54,13 @@ class AreaService
      */
     public function shouldShow(Block $block)
     {
-        // Because this is triggered on page view
-        // we can assume the area is present.
+        // The area can be empty, e.g. when changing the page's design.
+        $area = $this->getArea($block);
+        if (!$area) {
+            return true;
+        }
 
-        return $this->getArea($block)
-            ->shouldShow($block);
+        return $area->shouldShow($block);
     }
 
     /**

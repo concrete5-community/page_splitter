@@ -11,7 +11,7 @@ final class Controller extends Package
 {
     protected $pkgHandle = 'page_splitter';
     protected $appVersionRequired = '8.4.0';
-    protected $pkgVersion = '1.0.2';
+    protected $pkgVersion = '1.0.3';
     protected $pkgAutoloaderRegistries = [
         'src/PageSplitter' => '\A3020\PageSplitter',
     ];

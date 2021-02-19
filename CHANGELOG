@@ -1,3 +1,8 @@
+1.0.3
+- Catch any errors when hooking into the on_page_view and on_block_before_render events.
+- Make sure errors are written to the log, if they occur.
+- Fix 'Call to a member function shouldShow() on null' error when changing the design of a page.
+
 1.0.2
 - Fix error for backwards compatibility with older PHP versions.
 

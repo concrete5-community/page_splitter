@@ -2,6 +2,7 @@
 
 namespace A3020\PageSplitter;
 
+use A3020\PageSplitter\Listener\BlockBeforeRender;
 use A3020\PageSplitter\Listener\PageView;
 use Concrete\Core\Application\ApplicationAwareInterface;
 use Concrete\Core\Application\ApplicationAwareTrait;
@@ -68,8 +69,8 @@ class Provider implements ApplicationAwareInterface
 
         // This event is available in 8.4.0 and higher
         $this->dispatcher->addListener('on_block_before_render', function ($event) {
-            /** @var \A3020\PageSplitter\Listener\BlockBeforeRender $listener */
-            $listener = $this->app->make(\A3020\PageSplitter\Listener\BlockBeforeRender::class);
+            /** @var BlockBeforeRender $listener */
+            $listener = $this->app->make(BlockBeforeRender::class);
 
             return $listener->handle($event);
         });
